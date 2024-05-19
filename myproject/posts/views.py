@@ -11,7 +11,7 @@ from django. contrib import messages
 from django.views.generic.edit import  DeleteView, CreateView
 from django.urls import reverse_lazy
 from .forms import StageForm
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect
 from django.views.decorators.http import require_GET
 from django.contrib.auth.models import User, auth
 
@@ -24,7 +24,8 @@ from django.contrib.auth.models import User, auth
 def Postes_Listes(request):
     stages = Stage.objects.all()
     logements = Logement.objects.all()
-    return render(request, 'posts/postes_list.html', {'stages': stages, 'logements' : logements})
+    evenclub = EvenClub.objects.all()
+    return render(request, 'posts/postes_list.html', {'stages': stages, 'logements': logements, 'evenclub': evenclub})
 
 def Stages_list(request):
     stages = Stage.objects.all()
@@ -38,6 +39,7 @@ def Poste_page(request, slug):
     post = Poste.objects.get(slug=slug)
     return render(request, 'posts/post_page.html', {'post' : post} )
 
+@login_required
 def edit_stage(request, id):
     stage = get_object_or_404(Stage, id=id)
     if request.method == 'GET':
@@ -52,14 +54,43 @@ def edit_stage(request, id):
     else:
             messages.error(request, 'Please correct the following errors:')
             return render(request,'posts/stage_EditForm.html',{'form':form})
-        
+
+@login_required
+def evenClub_update_view(request, id):
+    evenclub = get_object_or_404(EvenClub, id=id)
+    
+    if request.method == "GET":
+        form = forms.CreateEvenClub(instance=evenclub)
+        context = {'form': form, 'id': id}
+        return render(request, 'posts/even_club_update_view.html', context)
+    
+    elif request.method == 'POST':
+        form =forms. CreateEvenClub(request.POST, instance=evenclub)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'The post has been updated successfully.')
+            return redirect("posts:listes")
+        else:
+            messages.error(request, 'Please correct the following errors:')
+    
+    context = {'form': form, 'id': id}
+    return render(request, 'posts/even_club_update_view.html', context)
+
+    
+@login_required
 class StageDeleteView(DeleteView):
     model = Stage
     template_name = 'posts\stage_delete.html'
     success_url = reverse_lazy('posts:listes')
+@login_required
+class EvenClubDeleteView(DeleteView):
+    model = EvenClub
+    template_name = 'posts\evenclub_delete.html'
+    success_url = reverse_lazy('posts:listes')
 
 
-
+    
+@login_required
 class CreerStage(CreateView):
    model = Stage
    template_name = 'posts/stage_form.html'
@@ -70,14 +101,16 @@ class CreerStage(CreateView):
    
    
    
+@login_required
 class creerEvenClub(CreateView):
     model = EvenClub
     template_name = 'posts/evenClubForm.html'
     form_class = forms.CreateEvenClub
     success_url = reverse_lazy('posts:listes')
 
-    
-    
+
+
+
     
 
 @login_required(login_url="/users/login/")

@@ -1,15 +1,15 @@
-
-{% extends "layout.html" %} 
+{% extends "layout.html" %}
 
 {% load static %}
-{% block title %} Stage {% endblock title %}
-{% block styles %} 
-  
-    {% endblock %}
-    
+{% block title %} Stage {% endblock %}
+
+
+
 {% block content %}
+<link rel="stylesheet" href="/static/css/post_form.css">
+
 <div class="container">
-    <h1>Create a New Post stage </h1>
+    <h1>Create a New Post stage</h1>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}

@@ -1,0 +1,13 @@
+{% extends "layout.html" %} 
+	
+{% block content %}
+<link rel="stylesheet" href="/static/css/edit_stage_form.css">
+
+<h2>{% if id %} Edit {% else %} New {% endif %} evenClub   </h2>
+<form method="post" novalidate>
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Save" />
+</form>
+
+{% endblock content %}

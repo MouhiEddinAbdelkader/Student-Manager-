@@ -10,10 +10,15 @@
 <div class="container">
     {% for club in evenClub %}
     <div class="card">
+
         <div class="card-header">
             <img src="{{ club.image.url }}" alt="{{ club.intitulé }}">
         </div>
         <div class="card-body">
+            <a href="{% url 'posts:evenclubupdate' id=club.id %}">modifier</a>  
+            <a href="{% url 'posts:evenclub-delete' club.pk %}">Suprimer</a>
+        </div>
+
             <span class="tag tag-teal">{{ club.club }}</span>
             <span class="tag tag-teal">{{ club.get_post_type_display }}</span>
             <h4>{{ club.intitulé }}</h4>
