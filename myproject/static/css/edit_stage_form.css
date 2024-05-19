@@ -1,0 +1,45 @@
+/* Apply general styles to the form */
+form {
+    width: 50%; /* Adjust width as needed */
+    margin: auto; /* Center the form horizontally */
+}
+
+/* Style the form heading */
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style form inputs and labels */
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Style the submit button */
+form input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #007bff; /* Adjust color as needed */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3; /* Adjust hover color as needed */
+}

@@ -1,0 +1,234 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: black;
+    color: whitesmoke;
+    font-size: 3rem;
+}
+
+nav {
+    padding: 1rem;
+    background-color: #44B78B;
+    color: white;
+    font-size: 2.5rem;
+}
+
+main {
+    padding: 1rem;
+}
+
+section {
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+}
+
+h1,
+h2 {
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: #81dbb8;
+}
+
+a:hover {
+    opacity: .85;
+}
+
+.banner {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+}
+/* 
+.form-with-validation {
+    max-width: 600px;
+    font-size: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+}
+
+.form-with-validation div {
+    display: flex;
+    flex-flow: column;
+    gap: 0.5rem;
+}
+
+.form-with-validation input {
+    padding: 0.25rem;
+    max-width: 300px;
+}
+
+.form-submit {
+    padding: 0.5rem;
+    border-radius: 10px;
+    width: 125px;
+} */
+
+.helptext {
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+.helptext ul {
+    list-style-type: none;
+}
+
+.errorlist {
+    color: #F00;
+    margin-left: 2rem;
+}
+
+.errorlist li::marker {
+    content: '🚨 ';
+}
+
+
+.logout {
+    display: inline-block;
+}
+
+.logout-button {
+    font-size: 2.5rem;
+    background-color: rgb(0, 0, 0, 0);
+    border: none;
+}
+
+.logout-button:hover {
+    opacity: .85;
+}
+
+/* start dropdown List */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }
+
+  
+
+
+.container {
+    display: flex;
+    width: 1040px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .card {
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 300px;
+  }
+  .card-header img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    min-height: 250px;
+  }
+  
+  .tag {
+    background: #cccccc;
+    border-radius: 50px;
+    font-size: 12px;
+    margin: 0;
+    color: #fff;
+    padding: 2px 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .tag-teal {
+    background-color: #47bcd4;
+  }
+  .tag-purple {
+    background-color: #5e76bf;
+  }
+  .tag-pink {
+    background-color: #cd5b9f;
+  }
+  
+  .card-body p {
+    font-size: 13px;
+    margin: 0 0 40px;
+  }
+  .user {
+    display: flex;
+    margin-top: auto;
+  }
+  
+  .user img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  .user-info h5 {
+    margin: 0;
+  }
+  .user-info small {
+    color: #545d7a;
+  }
+  

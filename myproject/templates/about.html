@@ -1,0 +1,89 @@
+{% extends "layout.html" %} 
+
+{%block title%}
+about
+{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" href="/static/css/about.css">
+
+    <header>
+        <h1>Application Web « Student Help »</h1>
+        <p>Au profit des étudiants de l'université</p>
+    </header>
+    <main>
+        <section>
+            <h2>Description Fonctionnelle</h2>
+            <p>L’application offrira les offres et/ou demandes des services suivants :</p>
+            <ul>
+                <li><strong>Logement</strong> proche de la faculté pour minimiser le coût et le temps du transport.</li>
+                <li><strong>Transport</strong> en commun ou de co-voiturage.</li>
+                <li>
+                    <strong>Sujets de stages</strong> présentés par les partenaires ou demandés par les étudiants selon leurs niveaux d’études.
+                    <ul>
+                        <li>Possibilité d'ajouter des affectations des encadreurs.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Évènements culturels ou scientifiques</strong> organisés au profit des étudiants.
+                    <ul>
+                        <li>
+                            Évènements <em>culturels</em> (pièce de théâtre, film, présentation musicale) avec spécification du prix.
+                        </li>
+                        <li>
+                            Évènements <em>scientifiques</em> organisés par un club particulier de l’université avec spécification du domaine ou sujet.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Recommandation</strong> : idée ou recommandation que l’utilisateur pourra partager avec sa communauté.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Accessibilité</h2>
+            <p>Le site peut être accessible aux étudiants de l’université, enseignants ou toute autre personne externe après inscription.</p>
+            <p>Dès sa connexion, l’utilisateur pourra consulter toutes les publications (posts) ou déposer une nouvelle offre et éventuellement supprimer l’une de ses posts.</p>
+        </section>
+
+        <section>
+            <h2>Fonctionnalités Avancées</h2>
+            <ul>
+                <li>Les publications (Stage, Logement, Évènement, Transport) peuvent être commentées et/ou adorées par les utilisateurs.</li>
+                <li>Pour chaque commentaire ou mention "j’aime", une notification est envoyée à celui qui a déposé la publication.</li>
+                <li>
+                    Recherche par mot clé pour chaque service :
+                    <ul>
+                        <li>Adresse pour un logement.</li>
+                        <li>Destination pour le transport.</li>
+                        <li>Type pour un stage.</li>
+                        <li>Nom du club pour un évènement.</li>
+                    </ul>
+                </li>
+                <li>Formulaire d’inscription/réservation à l’évènement, transport, logement ou stage.</li>
+                <li>
+                    Traitement automatique pour supprimer les publications passées :
+                    <ul>
+                        <li>Stage affecté.</li>
+                        <li>Transport passé.</li>
+                        <li>Évènements passés.</li>
+                        <li>Logement réservé ou tous les postes passés depuis un mois.</li>
+                    </ul>
+                    <p>Le système pourra demander l’avis de l’annonceur pour supprimer ou prolonger la durée de l'annonce.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Extensions et Améliorations</h2>
+            <p>Toute autre extension ou amélioration sera appréciée.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Université - Application Student Help</p>
+    </footer>
+
+
+
+{% endblock %}
+

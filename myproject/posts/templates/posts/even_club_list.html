@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Club Event List
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/css/even_club_list.css">
+
+<div class="container">
+    {% for club in evenClub %}
+    <div class="card">
+        <div class="card-header">
+            <img src="{{ club.image.url }}" alt="{{ club.intitulé }}">
+        </div>
+        <div class="card-body">
+            <span class="tag tag-teal">{{ club.club }}</span>
+            <span class="tag tag-teal">{{ club.get_post_type_display }}</span>
+            <h4>{{ club.intitulé }}</h4>
+            <p>{{ club.description }}</p>
+            <p>{{ club.lieu }}</p>
+            <p>{{ club.contactInfo }}</p>
+            <div class="user">
+                <img src="{{ user.profile.avatar.url }}" alt="User profile picture">
+                <div class="user-info">
+                    <h5>{{ user.username }}</h5>
+                    <small>{{ club.date }}</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

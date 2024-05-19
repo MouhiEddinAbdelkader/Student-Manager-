@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% load static %}
+{% block title %} Event Club {% endblock title %}
+{% block styles %} 
+  
+    {% endblock %}
+    
+{% block content %}
+<div class="container">
+    <h1>Create a New Event Club stage </h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

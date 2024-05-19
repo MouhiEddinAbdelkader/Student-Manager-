@@ -1,0 +1,1 @@
+console.log('this js is from your about pages');
