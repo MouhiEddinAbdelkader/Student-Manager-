@@ -14,6 +14,7 @@ from .forms import StageForm
 from django.http import JsonResponse, HttpResponseRedirect
 from django.views.decorators.http import require_GET
 from django.contrib.auth.models import User, auth
+from django.utils.decorators import method_decorator
 
 
 
@@ -55,7 +56,7 @@ def edit_stage(request, id):
             messages.error(request, 'Please correct the following errors:')
             return render(request,'posts/stage_EditForm.html',{'form':form})
 
-@login_required
+@method_decorator(login_required, name='dispatch')
 def evenClub_update_view(request, id):
     evenclub = get_object_or_404(EvenClub, id=id)
     
@@ -77,12 +78,12 @@ def evenClub_update_view(request, id):
     return render(request, 'posts/even_club_update_view.html', context)
 
     
-@login_required
+@method_decorator(login_required, name='dispatch')
 class StageDeleteView(DeleteView):
     model = Stage
     template_name = 'posts\stage_delete.html'
     success_url = reverse_lazy('posts:listes')
-@login_required
+@method_decorator(login_required, name='dispatch')
 class EvenClubDeleteView(DeleteView):
     model = EvenClub
     template_name = 'posts\evenclub_delete.html'
@@ -90,7 +91,7 @@ class EvenClubDeleteView(DeleteView):
 
 
     
-@login_required
+@method_decorator(login_required, name='dispatch')
 class CreerStage(CreateView):
    model = Stage
    template_name = 'posts/stage_form.html'
@@ -101,7 +102,7 @@ class CreerStage(CreateView):
    
    
    
-@login_required
+@method_decorator(login_required, name='dispatch')
 class creerEvenClub(CreateView):
     model = EvenClub
     template_name = 'posts/evenClubForm.html'

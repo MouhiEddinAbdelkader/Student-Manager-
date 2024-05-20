@@ -7,7 +7,7 @@ from . import models
 class StageForm(forms.ModelForm):
     class Meta:
         model = models.Stage
-        fields = ['image', 'post_type', 'date', 'author','typeStage',   'societe', 'sujet', 'contactInfo', 'specialité'  ]  # List only the fields you want to display
+        fields = ['image', 'post_type', 'date', 'author','typeStage', 'duree'  , 'societe', 'sujet', 'contactInfo', 'specialité'  ]  # List only the fields you want to display
 
 class CreateLogment(forms.ModelForm):
     class Meta:
