@@ -19,10 +19,10 @@
               <a href="{% url 'posts:stage-edit' id=stage.id %}">modifier</a>            </div>
           </div>
         <div class="author-name">{{ stage.author }}</div>
-        <p>{{ stage.post_type_display }}</p>
+        <p>Typde de Stage: {{ stage.post_type_display }}</p>
         <p>{{ stage.date }}</p>
-        <h2>{{ stage.get_typeStage_display }}</h2>
-        <p>{{ stage.get_post_type_display }}</p>
+        <h2>Typde de Stage:{{ stage.get_typeStage_display }}</h2>
+        <p>Typde de Poste: {{ stage.get_post_type_display }}</p>
     </div>
     {% if stage.image %}
     <img class="post-image" src="{{ stage.image.url }}" alt="{{ stage.post_type }}" />

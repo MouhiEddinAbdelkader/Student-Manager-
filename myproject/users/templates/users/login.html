@@ -16,4 +16,11 @@
         {% endif %}
         <button class="form-submit">Submit</button>
     </form>
+    <a href="{% url 'users:register' %}">
+        <span role="img" aria-label="User Registration" title="User Registration"> do you whant to registre</span>
+    </a>
+    <p>'               ' </p>
+    <p>'               ' </p>
+    <p>'               ' </p>
+    <a href="{% url 'users:password_reset' %}"><i>Forgot Password?</i></a>
 {% endblock %}
